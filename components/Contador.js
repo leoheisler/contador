@@ -4,6 +4,7 @@ import {useFonts, Poppins_400Regular, Poppins_500Medium, Poppins_600SemiBold, Po
 import Titulo from './Titulo';
 
 function Contador(props){
+    //PEGA AS FONTES
     const [fontsLoaded] = useFonts({
         Poppins_400Regular,
         Poppins_500Medium,
@@ -11,8 +12,10 @@ function Contador(props){
         Poppins_700Bold,
     });
 
+    //SETA O CONTADOR DO COMPONENTE CONTADOR
     let [numCounter,setCounter] = useState(props.valor);
 
+    //FUNÇÕES BASICAS DO CONTADOR
     function aumentaUm(){
         setCounter(numCounter+1);
         props.attValor(props.id,numCounter + 1);
@@ -43,6 +46,9 @@ function Contador(props){
 };
 
 export default Contador;
+/*
+    stylesheet contendo os estilos do contador
+*/
 const styles = StyleSheet.create({
     containerValores: {
         width:'95%',

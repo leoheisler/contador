@@ -12,7 +12,7 @@ function Titulo(props){
     }
     return(
         <View style={styles.container}>
-            <TextInput style={styles.escrita} placeholder='Contador' placeholderTextColor="white" value={contadorTittle} onChangeText={mudaTitulo}/>
+            <TextInput style={styles.escrita} placeholder='De um Titulo' placeholderTextColor="grey" value={contadorTittle} onChangeText={mudaTitulo}/>
         </View>
     );
 
@@ -26,6 +26,10 @@ const styles = StyleSheet.create({
         alignItems:'center'
     },
     escrita:{
+        borderWidth:2,
+        borderColor:'dodgerblue',
+        padding:5,
+        borderRadius:16,
         fontSize:18,
         flex:1,
         width:'80%',

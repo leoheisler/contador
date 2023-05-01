@@ -54,10 +54,10 @@ export default function App() {
   }
   function alteraTotal(){
     let x = 0
-    for (let index = 0; index < counterList.length; index++) {
-      x = x + counterList[index].valorInicial
-    }
-    setTotal(total = x);
+    counterList.forEach(counter =>{
+      x += counter.valorInicial;
+    })
+    setTotal(x);
   }
   /*
     FUNÇÃO SETTITULOSINGULAR
@@ -87,7 +87,7 @@ export default function App() {
 
       {/*SCROLL VIEW CONTENDO OS CONTADORES*/}
       <ScrollView style={styles.scrollabe}>
-        {counterList.map((item)=><Contador valor={item.valorInicial} key={Math.random(10000)} id={item.id} titulo={titleList[item.id].tituloInicial} attValor={setValoresSingulares}  attTitulo={setTituloSingular}/>)}
+        {counterList.map((item,i)=><Contador valor={item.valorInicial} key={i} id={item.id} titulo={titleList[item.id].tituloInicial} attValor={setValoresSingulares}  attTitulo={setTituloSingular}/>)}
       </ScrollView>
 
       {/*Modal com a tela do total*/}
